@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./chat.css";
 import EmojiPicker from "emoji-picker-react";
 
@@ -6,6 +6,12 @@ const Chat = () => {
 
     const [open, setOpen] = useState(false);
     const [text, setText] = useState("");
+
+    const endRef = useRef(null);
+
+    useEffect(() => {
+        endRef.current?.scrollIntoView({ behaviour: "smooth" })
+    }, [])
 
     const handleEmoji = (e) => {
         setText(prev => prev + e.emoji);
@@ -33,10 +39,10 @@ const Chat = () => {
                     <img src="./avatar.png" alt="" />
                     <div className="texts">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                            natoque penatibus et magnis dis parturient montes, nascetur 
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque 
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                            natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque
                             eu, pretium quis, sem. Nulla consequat massa quis enim.
                         </p>
                         <span>1 min ago</span>
@@ -44,12 +50,12 @@ const Chat = () => {
                 </div>
                 <div className="message own">
                     <div className="texts">
-                        <img src="./avatar.png" alt="" />
+                        <img src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load" alt="" />
                         <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                            natoque penatibus et magnis dis parturient montes, nascetur 
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque 
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                            natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque
                             eu, pretium quis, sem. Nulla consequat massa quis enim.
                         </p>
                         <span>1 min ago</span>
@@ -59,10 +65,10 @@ const Chat = () => {
                     <img src="./avatar.png" alt="" />
                     <div className="texts">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                            natoque penatibus et magnis dis parturient montes, nascetur 
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque 
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                            natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque
                             eu, pretium quis, sem. Nulla consequat massa quis enim.
                         </p>
                         <span>1 min ago</span>
@@ -71,10 +77,10 @@ const Chat = () => {
                 <div className="message own">
                     <div className="texts">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                            natoque penatibus et magnis dis parturient montes, nascetur 
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque 
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                            natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque
                             eu, pretium quis, sem. Nulla consequat massa quis enim.
                         </p>
                         <span>1 min ago</span>
@@ -84,10 +90,10 @@ const Chat = () => {
                     <img src="./avatar.png" alt="" />
                     <div className="texts">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                            natoque penatibus et magnis dis parturient montes, nascetur 
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque 
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                            natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque
                             eu, pretium quis, sem. Nulla consequat massa quis enim.
                         </p>
                         <span>1 min ago</span>
@@ -96,15 +102,16 @@ const Chat = () => {
                 <div className="message own">
                     <div className="texts">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
-                            natoque penatibus et magnis dis parturient montes, nascetur 
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque 
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                            natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque
                             eu, pretium quis, sem. Nulla consequat massa quis enim.
                         </p>
                         <span>1 min ago</span>
                     </div>
                 </div>
+                <div ref={endRef}></div>
             </div>
             <div className="bottom">
                 <div className="icons">
